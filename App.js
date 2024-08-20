@@ -26,10 +26,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
+  
       <View style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>Tasks</Text>
-        <ScrollView>
+        <ScrollView contentContainerStyle={{ flexGrow: 0.75 }}>
           <View style={styles.items}>
             {
               taskItems.map((item, index) => {
@@ -48,7 +48,7 @@ export default function App() {
         style={[styles.writeTaskWrapper, { zIndex: 1000, elevation: 5 }]}
       >
         <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
-
+  
         <TouchableOpacity onPress={() => handleAddTask()}>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#E8EAED',
+    paddingBottom: 150,
   },
   tasksWrapper: {
     paddingTop: 80,
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
   writeTaskWrapper: {
     position: 'absolute',
     flexDirection: 'row',
-    bottom: 60,
+    bottom: 30,
     width: '100%',
     justifyContent: 'space-around',
     alignItems: 'center',
