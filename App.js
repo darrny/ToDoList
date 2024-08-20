@@ -26,6 +26,23 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+
+      <View style={styles.tasksWrapper}>
+        <Text style={styles.sectionTitle}>Tasks</Text>
+        <ScrollView>
+          <View style={styles.items}>
+            {
+              taskItems.map((item, index) => {
+                return (
+                  <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                    <Task text={item} completeTask={completeTask} index={index} />
+                  </TouchableOpacity>
+                )
+              })
+            }
+          </View>
+        </ScrollView>
+      </View>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? "paddinng" : "height"}
         style={[styles.writeTaskWrapper, { zIndex: 1000, elevation: 5 }]}
@@ -38,23 +55,6 @@ export default function App() {
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-      <ScrollView>
-        <View style={styles.tasksWrapper}>
-          <Text style={styles.sectionTitle}>Today's Task</Text>
-          <View style={styles.items}>
-            {
-              taskItems.map((item, index) => {
-                return (
-                  <TouchableOpacity key={index} onPress={() => completeTask(index)}>
-                    <Task text={item} completeTask={completeTask} index={index} />
-                  </TouchableOpacity>
-                )
-              })
-            }
-          </View>
-        </View>
-      </ScrollView>
-
     </View>
   );
 }
@@ -80,10 +80,11 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 15,
     paddingHorizontal: 30,
-    width: 270,
+    width: 290,
+    height: 60,
     backgroundColor: 'white',
-    borderRadius: 15,
-    borderWidth: 2,
+    borderRadius: 30,
+    borderWidth: 0,
     borderColor: 'grey',
     elevation: 5,  // Adding elevation to input bar
   },
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: 'white',
     borderRadius: 60,
-    borderWidth: 2,
+    borderWidth: 0,
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: 'grey',
@@ -107,6 +108,10 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-around',
     alignItems: 'center',
-    elevation: 5,  // Adding elevation to writeTaskWrapper
+    elevation: 10,  // Increased elevation to create a more noticeable shadow
+    shadowColor: '#000',  // Black shadow
+    shadowOffset: { width: 0, height: 2 },  // Horizontal and vertical offset
+    shadowOpacity: 0.5,  // Opacity of the shadow
+    shadowRadius: 3.84,  // Softens the shadow
   },
 });
