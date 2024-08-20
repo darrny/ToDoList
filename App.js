@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Task from './components/Task';
 import { KeyboardAvoidingView } from 'react-native';
@@ -6,6 +6,7 @@ import { TextInput } from 'react-native';
 import { Platform } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { Keyboard } from 'react-native';
+import { ScrollView } from 'react-native';
 
 export default function App() {
   const [task, setTask] = useState();
@@ -25,33 +26,35 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Today's Task</Text>
-        <View style={styles.items}>
-          {
-            taskItems.map((item, index) => {
-              return (
-                <TouchableOpacity key = {index} onPress = {() => completeTask(index)}>
-                  <Task text={item}/>
-                </TouchableOpacity>
-              )
-            })
-          }
-        </View>
-      </View>
-
       <KeyboardAvoidingView
-        behaviour = {Platform.OS === 'ios' ? "paddinng" : "height"}
-        style = {styles.writeTaskWrapper}
+        behavior={Platform.OS === 'ios' ? "paddinng" : "height"}
+        style={[styles.writeTaskWrapper, { zIndex: 1000, elevation: 5 }]}
       >
-        <TextInput style = {styles.input} placeholder = {'Write a task'} value = {task} onChangeText={text => setTask(text)}/>
+        <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
 
-        <TouchableOpacity onPress = {() => handleAddTask()}>
-          <View style = {styles.addWrapper}>
-            <Text style = {styles.addText}>+</Text>
+        <TouchableOpacity onPress={() => handleAddTask()}>
+          <View style={styles.addWrapper}>
+            <Text style={styles.addText}>+</Text>
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
+      <ScrollView>
+        <View style={styles.tasksWrapper}>
+          <Text style={styles.sectionTitle}>Today's Task</Text>
+          <View style={styles.items}>
+            {
+              taskItems.map((item, index) => {
+                return (
+                  <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                    <Task text={item} completeTask={completeTask} index={index} />
+                  </TouchableOpacity>
+                )
+              })
+            }
+          </View>
+        </View>
+      </ScrollView>
+
     </View>
   );
 }
@@ -72,26 +75,28 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   items: {
-    justifyContent:'space-between',
+    justifyContent: 'space-between',
   },
   input: {
     paddingVertical: 15,
-    paddingHorizontal: 20,
-    width: 250,
+    paddingHorizontal: 30,
+    width: 270,
     backgroundColor: 'white',
-    borderRadius: 60,
-    borderWidth: 1,
+    borderRadius: 15,
+    borderWidth: 2,
     borderColor: 'grey',
+    elevation: 5,  // Adding elevation to input bar
   },
   addWrapper: {
     width: 60,
     height: 60,
     backgroundColor: 'white',
     borderRadius: 60,
+    borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: 'grey',
-    borderWidth: 1,
+    elevation: 5,  // Adding elevation to add button
   },
   addText: {
   },
@@ -102,5 +107,6 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-around',
     alignItems: 'center',
-  }
+    elevation: 5,  // Adding elevation to writeTaskWrapper
+  },
 });

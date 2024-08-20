@@ -6,7 +6,7 @@ const Task = (props) => {
     return (
         <View style={styles.item}>
             <View style={styles.itemLeft}>
-                <TouchableOpacity style={styles.square}></TouchableOpacity>
+                <TouchableOpacity style={styles.square} onPress={() => props.completeTask(props.index)}></TouchableOpacity>
                 <Text style={styles.itemText}>{props.text}</Text>
             </View>
         </View>
