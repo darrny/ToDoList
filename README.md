@@ -1,4 +1,4 @@
-To-Do List App ✅
+To-Do List ✅
 
 A simple and intuitive To-Do List application built with React Native and powered by Expo Go. This app helps users efficiently manage tasks, stay organized, and track progress seamlessly.
 
