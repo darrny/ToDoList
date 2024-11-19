@@ -56,4 +56,5 @@ Future Improvements 🚀
 	•	Add dark mode support for improved accessibility.
 
 Screenshots 📸
+
 <img width="409" alt="Screenshot 2024-11-19 at 8 49 28 PM" src="https://github.com/user-attachments/assets/0011f7ee-f0c4-476e-b003-4d74e7c623d5">
