@@ -1,60 +1,76 @@
-To-Do List ✅
+# **To-Do List ✅**
 
 A simple and intuitive To-Do List application built with React Native and powered by Expo Go. This app helps users efficiently manage tasks, stay organized, and track progress seamlessly.
 
-Features ✨
+---
 
-	•	Add, edit, and delete tasks effortlessly.
-	•	Mark tasks as complete or incomplete.
-	•	User-friendly interface for easy navigation.
-	•	Cross-platform compatibility (iOS and Android).
+## **Features ✨**
 
-Prerequisites 🛠️
+- Add, edit, and delete tasks effortlessly.
+- Mark tasks as complete or incomplete.
+- User-friendly interface for easy navigation.
+- Cross-platform compatibility (iOS and Android).
 
-	•	Node.js (v16 or higher recommended)
-	•	Expo CLI (to be installed as part of the setup)
-	•	A device or emulator with Expo Go installed.
+---
 
-Installation 🚀
+## **Prerequisites 🛠️**
 
-1.	Clone the Repository:
+- Node.js (v16 or higher recommended)
+- Expo CLI (to be installed as part of the setup)
+- A device or emulator with Expo Go installed.
 
-        git clone https://github.com/your-username/todo-list-app.git
-        cd todo-list-app
+---
 
+## **Installation 🚀**
 
-2.	Install Dependencies:
+### **1. Clone the Repository:**
 
-        npm install
+```bash
+git clone https://github.com/your-username/todo-list-app.git
+cd todo-list-app
+```
 
+### **2. Install Dependencies:**
 
-3.	Install Expo CLI (if not already installed globally):
+```bash
+npm install
+```
 
-         npm install -g expo-cli
+### **3. Install Expo CLI (if not already installed globally):**
 
+```bash
+npm install -g expo-cli
+```
 
-4.	Start the Development Server:
+### **4. Start the Development Server:**
 
-        npx expo start
+```bash
+npx expo start
+```
 
+### **5. Run the Application:**
 
-5.	Run the Application:
-	  •	Open the Expo Go app on your device.
-    •	Scan the QR code displayed in the terminal or browser.
-	  •	The app will launch on your device.
+- Open the Expo Go app on your device.
+- Scan the QR code displayed in the terminal or browser.
+- The app will launch on your device.
 
+---
 
-Technologies Used 🖥️
+## **Technologies Used 🖥️**
 
-	•	React Native: Framework for building mobile apps.
-	•	Expo Go: Development toolchain for React Native apps.
+- **React Native**: Framework for building mobile apps.
+- **Expo Go**: Development toolchain for React Native apps.
 
-Future Improvements 🚀
+---
 
-	•	Add task categories for better organization.
-	•	Enable task prioritization (e.g., High, Medium, Low).
-	•	Add dark mode support for improved accessibility.
+## **Future Improvements 🚀**
 
-Screenshots 📸
+- Add task categories for better organization.
+- Enable task prioritization (e.g., High, Medium, Low).
+- Add dark mode support for improved accessibility.
 
-<img width="409" alt="Screenshot 2024-11-19 at 8 49 28 PM" src="https://github.com/user-attachments/assets/0011f7ee-f0c4-476e-b003-4d74e7c623d5">
+---
+
+## **Screenshots 📸**
+
+![Screenshot](https://github.com/user-attachments/assets/0011f7ee-f0c4-476e-b003-4d74e7c623d5)
